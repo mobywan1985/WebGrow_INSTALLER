@@ -21,8 +21,8 @@ sudo pip install Adafruit-DHT
 sudo pip install requests
 
 sudo mysql -Bse "GRANT ALL PRIVILEGES ON *.* TO 'web'@'localhost' IDENTIFIED BY 'webgrow1985';
-CREATE DATABASE webgrow_installer;
-USE webgrow_installer;
+CREATE DATABASE webgrow;
+USE webgrow;
 
 CREATE table devices(id INT AUTO_INCREMENT NOT NULL,  d_gpio INT, d_trigger INT, d_tchange BOOLEAN, d_hchange BOOLEAN, d_temp INT,d_humid INT, d_interval INT, d_duration INT, d_timer INT,d_name VARCHAR(32), d_run BOOLEAN, d_state BOOLEAN, d_lastrun DATETIME, d_type INT, d_ip VARCHAR(16), d_protocol INT, PRIMARY KEY (id));
 
