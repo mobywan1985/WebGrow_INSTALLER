@@ -34,6 +34,7 @@ CREATE table user(id INT NOT NULL AUTO_INCREMENT, fname VARCHAR(32), lname VARCH
 INSERT INTO user(fname, lname,username, password) VALUES ('Admin','','admin', '$2y$10$GQLb5ODRlEOMhXm0BLdv..UDtdFMKlmw0PpiUiw7VmFwGNu2uTOnq');
 
 CREATE table gpio(id INT AUTO_INCREMENT NOT NULL, gpio INT, PRIMARY KEY (id));
+INSERT INTO gpio(gpio) VALUES(0);
 INSERT INTO gpio(gpio) VALUES(1);
 INSERT INTO gpio(gpio) VALUES(2);
 INSERT INTO gpio(gpio) VALUES(3);
@@ -62,8 +63,6 @@ INSERT INTO gpio(gpio) VALUES(25);
 INSERT INTO gpio(gpio) VALUES(26);
 INSERT INTO gpio(gpio) VALUES(27);
 INSERT INTO gpio(gpio) VALUES(28);
-INSERT INTO gpio(gpio) VALUES(29);
-INSERT INTO gpio(gpio) VALUES(30);
 
 CREATE table device_protocol(id INT AUTO_INCREMENT NOT NULL, d_genericname VARCHAR(32), d_protocol INT, d_icon VARCHAR(32), PRIMARY KEY (id));
 INSERT INTO device_protocol(d_genericname, d_protocol, d_icon) VALUES ('GPIO', 0, 'fas fa-plug');
