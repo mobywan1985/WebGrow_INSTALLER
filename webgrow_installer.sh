@@ -1,9 +1,7 @@
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install php7.0-fpm php7.0-mysql php7.0-curl nginx mysql-server joe python-pip composer motion
-sudo apt-get install libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev libwebp-dev mysql-common libmariadbclient18 libpq5
+sudo apt-get -y upgrade
+sudo apt-get -y install php7.0-fpm php7.0-mysql php7.0-curl nginx mysql-server joe python-pip composer motion libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev libwebp-dev mysql-common libmariadbclient18 libpq5
 sudo dpkg -i pi_stretch_motion_4.2.1-1_armhf.deb
-sudo apt-get install -f
 sudo cp default /etc/nginx/sites-available/
 sudo cp php.ini /etc/php/7.0/fpm/
 sudo cp www.conf /etc/php/7.0/fpm/pool.d/
