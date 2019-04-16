@@ -1,4 +1,5 @@
-Installer for WebGrow
+Install a fresh Raspbian Image to SD card.
+Installer for WebGrow Designed for Raspberry Pi
 
 sudo apt-get update<br/>
 sudo apt-get upgrade<br/>
