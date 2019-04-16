@@ -31,7 +31,7 @@ CREATE table settings(id INT NOT NULL AUTO_INCREMENT, e_webcam BOOLEAN, e_sensor
 INSERT INTO settings(e_webcam, e_sensor, s_samp, s_gpio, s_alert_email, s_send_email, s_send_pw) VALUES (false, false, 120, 4, '', '' , '');
 
 CREATE table user(id INT NOT NULL AUTO_INCREMENT, fname VARCHAR(32), lname VARCHAR(32), username VARCHAR(32), password VARCHAR(200), PRIMARY KEY(id));
-INSERT INTO user(fname, lname,username, password) VALUES ('Admin','','admin', '$2y$10$GQLb5ODRlEOMhXm0BLdv..UDtdFMKlmw0PpiUiw7VmFwGNu2uTOnq');
+INSERT INTO user(fname, lname,username, password) VALUES ('Admin','','admin', '\$2y\$10\$GQLb5ODRlEOMhXm0BLdv..UDtdFMKlmw0PpiUiw7VmFwGNu2uTOnq');
 
 CREATE table gpio(id INT AUTO_INCREMENT NOT NULL, gpio INT, PRIMARY KEY (id));
 INSERT INTO gpio(gpio) VALUES(0);
