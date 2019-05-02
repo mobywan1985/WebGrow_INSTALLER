@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install php7.0-fpm php7.0-mysql php7.0-curl nginx mysql-server joe python-pip composer motion libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev libwebp-dev mysql-common libmariadbclient18 libpq5
+sudo apt-get -y install php7.0-fpm php7.0-mysql php7.0-curl nginx mysql-server joe python-pip composer motion libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev libwebp-dev mysql-common libmariadbclient18 libpq5 mosquitto mosquitto-clients
 sudo dpkg -i pi_stretch_motion_4.2.1-1_armhf.deb
 sudo cp default /etc/nginx/sites-available/
 sudo cp php.ini /etc/php/7.0/fpm/
@@ -8,6 +8,7 @@ sudo cp www.conf /etc/php/7.0/fpm/pool.d/
 sudo cp motion.conf /etc/motion/
 sudo cp motion /etc/default/
 sudo cp webgrow.sh /etc/init.d/
+sudo cp mosquitto.conf /etc/mosquitto/
 
 cd /home/pi/
 su - pi -c 'composer require "twig/twig:^2.0"'
@@ -17,6 +18,7 @@ sudo pip install apscheduler
 sudo pip install pymysql
 sudo pip install Adafruit-DHT
 sudo pip install requests
+sudo pip install paho-mqtt
 
 sudo mysql -Bse "GRANT ALL PRIVILEGES ON *.* TO 'web'@'localhost' IDENTIFIED BY 'webgrow1985';
 CREATE DATABASE webgrow;
