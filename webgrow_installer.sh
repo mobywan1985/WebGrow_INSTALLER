@@ -82,7 +82,7 @@ INSERT INTO device_types(d_genericname, d_type, d_icon) VALUES ('Water Chiller',
 INSERT INTO device_types(d_genericname, d_type, d_icon) VALUES ('Water Heater', 80, 'fas fa-thermometer-full');
 INSERT INTO device_types(d_genericname, d_type, d_icon) VALUES ('Generic Plug', 90, 'fas fa-plug');
 
-CREATE table journal(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(60), start_date DATETIME, end_date DATETIME, note VARCHAR(255), archived BOOLEAN,PRIMARY KEY(id));
+CREATE table journal(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(60), breeder VARCHAR(60), genetics VARCHAR(60), nutrients VARCHAR(60),method VARCHAR(60),media VARCHAR(60),lighting VARCHAR(60),  start_date DATETIME, end_date DATETIME, note VARCHAR(255), archived BOOLEAN,PRIMARY KEY(id));
 CREATE table journal_event(id INT NOT NULL AUTO_INCREMENT, journal_id INT,event_date DATETIME, event_type INT, event_note VARCHAR(255), event_user VARCHAR(32), event_image VARCHAR(255),PRIMARY KEY(id));
 
 CREATE table event_type(id INT NOT NULL AUTO_INCREMENT, type_id INT, full_name VARCHAR(32) ,name VARCHAR(32), icon VARCHAR(32),element VARCHAR(32), PRIMARY KEY(id));
@@ -101,6 +101,7 @@ INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Set
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Schedule', 'Scheduling','schedule','fas fa-calendar-check',42,0);
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Users', 'Users','users','fas fa-users',45,1);
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Logout','Logout', 'logout','fas fa-bolt',50,1);
+insert into menu(m_name, m_header, m_url, m_icon, m_order, m_enabled) values('Charts', 'Charts', 'chart', 'fas fa-chart-line', 26, 1)
 
 CREATE table triggers(id INT NOT NULL AUTO_INCREMENT,t_id INT, t_name VARCHAR(32), t_element VARCHAR(32), t_enabled BOOLEAN, PRIMARY KEY(id));
 INSERT INTO triggers(t_id, t_name, t_element, t_enabled) VALUES (0, 'None', 'collapseNone',1);
@@ -118,18 +119,18 @@ sudo update-rc.d webgrow.sh defaults
 sudo mkdir /usr/local/bin/webgrow
 cd /usr/local/bin/webgrow/
 #git cmd to download
-git clone https://github.com/mobywan1985/WebGrow_PYTHON.git
-cd WebGrow_PYTHON
+git clone https://github.com/mobywan1985/WebGrowPYTHON_MQTT.git
+cd WebGrowPYTHON_MQTT
 sudo mv * ../
 cd ../
-sudo rm -rf WebGrow_PYTHON
+sudo rm -rf WebGrowPYTHON_MQTT
 
 cd /var/www/html/
 #git cmd to download
-git clone https://github.com/mobywan1985/WebGrow_PHP.git
-cd WebGrow_PHP
+git clone https://github.com/mobywan1985/WebGrowPHP_MQTT.git
+cd WebGrowPHP_MQTT
 sudo mv * ../
 cd ../
-sudo rm -rf WebGrow_PHP
+sudo rm -rf WebGrowPHP_MQTT
 
 echo "Please Reboot Your System!"
