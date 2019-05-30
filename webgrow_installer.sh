@@ -90,6 +90,7 @@ INSERT INTO event_type(type_id, full_name,name, icon, element) VALUES('0','Plain
 INSERT INTO event_type(type_id, full_name,name, icon, element) VALUES('5','Nutrient Water','Nutrients', 'fas fa-tint', 'event_nutes');
 INSERT INTO event_type(type_id, full_name,name, icon, element) VALUES('10','Defoliation','Defoliate','fas fa-leaf', 'event_defol');
 INSERT INTO event_type(type_id, full_name,name, icon, element) VALUES('20','Log Notes','Note','fas fa-sticky-note', 'event_note');
+INSERT INTO event_type(type_id, full_name,name, icon, element) VALUES('25','Photo','Photo','fas fa-image', 'event_photo');
 
 CREATE table menu(id INT NOT NULL AUTO_INCREMENT,m_name VARCHAR(32), m_header VARCHAR(32),m_url VARCHAR(32), m_icon VARCHAR(32),m_order INT, m_enabled BOOLEAN,  PRIMARY KEY(id));
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Home', 'Overview','home','fas fa-home',10,1);
@@ -101,7 +102,7 @@ INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Set
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Schedule', 'Scheduling','schedule','fas fa-calendar-check',42,0);
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Users', 'Users','users','fas fa-users',45,1);
 INSERT INTO menu(m_name, m_header,m_url, m_icon,m_order, m_enabled) VALUES ('Logout','Logout', 'logout','fas fa-bolt',50,1);
-insert into menu(m_name, m_header, m_url, m_icon, m_order, m_enabled) values('Charts', 'Charts', 'chart', 'fas fa-chart-line', 26, 1)
+insert into menu(m_name, m_header, m_url, m_icon, m_order, m_enabled) values('Charts', 'Charts', 'chart', 'fas fa-chart-line', 26, 1);
 
 CREATE table triggers(id INT NOT NULL AUTO_INCREMENT,t_id INT, t_name VARCHAR(32), t_element VARCHAR(32), t_enabled BOOLEAN, PRIMARY KEY(id));
 INSERT INTO triggers(t_id, t_name, t_element, t_enabled) VALUES (0, 'None', 'collapseNone',1);
@@ -132,5 +133,8 @@ cd WebGrowPHP_MQTT
 sudo mv * ../
 cd ../
 sudo rm -rf WebGrowPHP_MQTT
+cd /var/www/html/dashboard/
+sudo mkdir uploads
+sudo chmod 777 uploads
 
 echo "Please Reboot Your System!"
