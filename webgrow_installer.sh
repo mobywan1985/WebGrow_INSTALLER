@@ -29,8 +29,10 @@ CREATE table devices(id INT AUTO_INCREMENT NOT NULL,  d_gpio INT, d_trigger INT,
 CREATE TABLE sensor_log(id INT AUTO_INCREMENT NOT NULL, temperature INT, humidity INT, log_date DATETIME, PRIMARY KEY (id));
 CREATE table log(id INT NOT NULL AUTO_INCREMENT, runtime DATETIME, runstate INT, d_id INT, d_gpio INT, d_protocol INT, d_ip VARCHAR(16),PRIMARY KEY(id));
 CREATE table schedule(id INT NOT NULL AUTO_INCREMENT, runtime DATETIME, d_state INT, d_id INT, d_dayofwk VARCHAR(30),PRIMARY KEY(id));
-CREATE table settings(id INT NOT NULL AUTO_INCREMENT, e_webcam BOOLEAN, e_sensor BOOLEAN, s_samp INT, s_gpio INT, s_alert INT, s_alert_email VARCHAR(100), s_send_email VARCHAR(100), s_send_pw VARCHAR(100), PRIMARY KEY(id));
-INSERT INTO settings(e_webcam, e_sensor, s_samp, s_gpio, s_alert_email, s_send_email, s_send_pw) VALUES (false, false, 120, 4, '', '' , '');
+
+CREATE table settings(id INT NOT NULL AUTO_INCREMENT, d_name VARCHAR(100), e_webcam BOOLEAN, e_sensor BOOLEAN, s_samp INT, s_tadj INT, s_hadj INT, s_gpio INT, e_cels BOOLEAN,s_alert INT, s_alert_email VARCHAR(100), s_send_email VARCHAR(100), s_send_pw VARCHAR(100), PRIMARY KEY(id));
+
+INSERT INTO settings(d_name,e_webcam, e_sensor, s_samp, s_gpio, s_alert_email, s_send_email, s_send_pw, e_cels) VALUES ('webgrow',false, false, 120, 4, '', '' , '', false);
 
 CREATE table user(id INT NOT NULL AUTO_INCREMENT, fname VARCHAR(32), lname VARCHAR(32), username VARCHAR(32), password VARCHAR(200), PRIMARY KEY(id));
 INSERT INTO user(fname, lname,username, password) VALUES ('Admin','','admin', '\$2y\$10\$GQLb5ODRlEOMhXm0BLdv..UDtdFMKlmw0PpiUiw7VmFwGNu2uTOnq');
